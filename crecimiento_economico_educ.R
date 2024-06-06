@@ -3,15 +3,14 @@
 Proyecto: Economia de la Educacion - INTEC
 Que hace: Estima modelo de crecimiento economico 
 Autora: Marygracia Aquino
-Ultima actualizacion: 15 junio 2022
+Ultima actualizacion: 6 junio 2024
 '
 ################################################################################
 
 #Importar y limpiar base de datos
 
 ##establece carpeta de trabajo
-## cambiar \ a / para computadoras windows
-setwd(dir = "C:/Users/maryg/OneDrive/3_Jobs/8_intec/s7-C12")
+setwd(dir = "C:/Users/maryg/OneDrive/3_Jobs/8_intec/6_Eco Educ_mayo-julio 2024/Clases/U4")
 
 ## importar base de datos
 library(haven)
@@ -23,6 +22,7 @@ hw <- read_dta("hawo2012tabs.dta")
 
 ## estadisticos
 summary(lm(ypcgr ~ ypc60 + ed60, data = hw))
+summary(lm(ypcgr ~ ypc60 + ed60 + open + exprop, data = hw))
 summary(lm(ypcgr ~ ypc60 + ed60 + tmeanmsagay, data = hw))
 summary(lm(ypcgr ~ ypc60 + ed60 + tmeanmsagay + open + exprop, data = hw))
 
